@@ -6,8 +6,11 @@
 //
 
 import UIKit
-
+protocol UpdateCredit {
+    func updateCredit(credit: String);
+}
 class BankViewController: UIViewController {
+    var delegate: UpdateCredit?
     var won = 0
     var credit = 0
     var spins = 0
@@ -38,11 +41,16 @@ class BankViewController: UIViewController {
     }
     
     @IBAction func addCreditButton(_ sender: Any) {
-        var num = addCredit.text!
-        if Int(num) == nil {
+        var num = Int(addCredit.text!)
+        if num == nil {
             createAlert(title: "Please enter valid number", msg: "Please add more credit at the bank tab")
         }
-       
+        else{
+            self.credit = self.credit + num!
+            creditLabel.text = String(self.credit)
+            delegate?.updateCredit(credit: String(credit))
+            dismiss(animated: true, completion: nil);
     }
     
+}
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UpdateCredit {
     var slotImages: [UIImage] = [#imageLiteral(resourceName: "7"), #imageLiteral(resourceName: "6"), #imageLiteral(resourceName: "9"), #imageLiteral(resourceName: "1"), #imageLiteral(resourceName: "5"), #imageLiteral(resourceName: "3"), #imageLiteral(resourceName: "2"), #imageLiteral(resourceName: "8"), #imageLiteral(resourceName: "4")]
     var slotIdx1 = 0
     var slotIdx2 = 0
@@ -57,15 +57,16 @@ class ViewController: UIViewController {
             self.credit = self.credit + 10*bet;
             self.won = self.won + 10*bet
             self.bet = 1
-            self.spins = self.spins+1
+            
         }
             else if slotIdx1 == slotIdx2 || slotIdx2 == slotIdx3 || slotIdx1 == slotIdx3{
                 self.credit = self.credit - self.bet;
                 self.bet = 1;
-                self.spins = self.spins+1;
+                
             }
             creditLabel.text = "Credit:  "+String(self.credit)
             betLabel.text = "Bet:  "+String(self.bet)
+            self.spins = self.spins+1;
         }
     }
     
@@ -86,6 +87,11 @@ class ViewController: UIViewController {
         startTab.won =  self.won
         startTab.spins = self.spins
         
+    }
+    
+    func updateCredit(credit: String) {
+        self.credit = Int(credit)!
+        creditLabel.text = "Credit:  "+credit
     }
     
 }

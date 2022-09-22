@@ -9,12 +9,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Game-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Exam1_Seenuvasavarathan_Sneha" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Credit:  100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAU-ba-PLo">
@@ -78,7 +78,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="ETm-0q-XEN"/>
+                    <tabBarItem key="tabBarItem" title="Game" image="seal.fill" catalog="system" id="ETm-0q-XEN"/>
+                    <navigationItem key="navigationItem" id="79K-Ce-7op"/>
                     <connections>
                         <outlet property="betLabel" destination="3tZ-vX-Wib" id="PO7-Vt-UtE"/>
                         <outlet property="creditLabel" destination="kAU-ba-PLo" id="3aI-8m-I4i"/>
@@ -91,7 +92,7 @@
             </objects>
             <point key="canvasLocation" x="1005.7971014492755" y="-59.598214285714285"/>
         </scene>
-        <!--Item-->
+        <!--Bank-->
         <scene sceneID="y9J-M9-wy2">
             <objects>
                 <viewController id="Wja-C5-HWB" customClass="BankViewController" customModule="Exam1_Seenuvasavarathan_Sneha" customModuleProvider="target" sceneMemberID="viewController">
@@ -177,12 +178,13 @@
                         <viewLayoutGuide key="safeArea" id="zUt-1Y-PBu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="qpf-z6-AFY"/>
+                    <tabBarItem key="tabBarItem" title="Bank" image="banknote" catalog="system" id="qpf-z6-AFY"/>
                     <connections>
                         <outlet property="addCredit" destination="BBZ-EK-tmd" id="cz2-KZ-tMz"/>
                         <outlet property="creditLabel" destination="vSe-bg-Hhh" id="ODY-sL-AR7"/>
                         <outlet property="spinLabel" destination="A7S-Sh-mOX" id="Xln-TP-lyN"/>
                         <outlet property="wonLabel" destination="PKQ-8T-Jjh" id="AbN-0i-QeE"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="BankToGame" id="R03-qd-NdR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pg0-d0-a0e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -208,10 +210,15 @@
             <point key="canvasLocation" x="95.652173913043484" y="-59.598214285714285"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="R03-qd-NdR"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="1" width="320" height="320"/>
         <image name="2" width="320" height="320"/>
         <image name="4" width="320" height="320"/>
+        <image name="banknote" catalog="system" width="128" height="78"/>
+        <image name="seal.fill" catalog="system" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
